@@ -17,6 +17,7 @@ bool place(int try_row, int col) {
 
 void backtrack(int col) {
 	for (int try_row = 1; try_row <= 8; try_row++) {
+		if (col == a && try_row != b) continue;
 		if (place(try_row, col)) {
 			row[col] = try_row;
 			if (col == 8 && row[b] == a) {
